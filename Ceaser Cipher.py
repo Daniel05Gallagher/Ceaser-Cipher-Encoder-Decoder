@@ -1,7 +1,19 @@
 import string
-# Base instance variables
 alphabet = string.ascii_lowercase
 
+# Encoding function
+def encode(keyIn, plaintextIn):
+    cipher = alphabet[keyIn:] + alphabet[:keyIn]
+    table = str.maketrans(alphabet, cipher)
+    encoded = plaintextIn.translate(table)
+    print(encoded)
+    
+# Decoding function
+def decode(keyIn, plaintextIn):
+    cipher = alphabet[keyIn:] + alphabet[:keyIn]
+    table = str.maketrans(alphabet, cipher)
+    decoded = plaintextIn.translate(table)
+    print(decoded)
 
 # Progam open
 print()
@@ -16,10 +28,7 @@ if user_in == "encode":
     print()
     key = int(input("Enter a encryption key between 1-26: "))
     plaintext = input("Enter your text that you wish encoded: ").lower()
-    cipher = alphabet[key:] + alphabet[:key]
-    table = str.maketrans(alphabet, cipher)
-    encoded = plaintext.translate(table)
-    print(encoded)
+    encode(key, plaintext)
 
 # Decoding Tool
 if user_in == "decode":
@@ -28,8 +37,8 @@ if user_in == "decode":
     key = int(input("Enter a decryption key between 1-26: "))
     plaintext = input("Enter your text that you wish decoded: ").lower()
     key = 26-key
-    cipher = alphabet[key:] + alphabet[:key]
-    table = str.maketrans(alphabet, cipher)
-    decoded = plaintext.translate(table)
-    print(decoded)
+    decode(key, plaintext)
+    
+else:
+    exit
 
