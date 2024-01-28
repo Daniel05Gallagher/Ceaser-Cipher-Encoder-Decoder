@@ -24,6 +24,7 @@ user_in = input("Input: ").lower()
 
 # Encoding Tool
 if user_in == "encode":
+    print()
     print("--- Encoding Tool Selected ---")
     print()
     key = int(input("Enter a encryption key between 1-26: "))
@@ -32,6 +33,7 @@ if user_in == "encode":
 
 # Decoding Tool
 if user_in == "decode":
+    print()
     print("--- Decoding Tool Selected ---")
     print()
     key = int(input("Enter a decryption key between 1-26: "))
