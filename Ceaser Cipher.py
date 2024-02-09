@@ -1,5 +1,6 @@
 import string
-alphabet = string.ascii_lowercase
+# Base instance variables
+alphabet = string.ascii_lowercase+string.ascii_uppercase
 
 # Encoding function
 def encode(keyIn, plaintextIn):
@@ -17,16 +18,14 @@ def decode(keyIn, plaintextIn):
 
 # Progam open
 print()
-print("--- Ceaser Cipher Tool ---")
-print()
-print("Type [Encode] or [Decode] to continue to the appropriate mode")
+print("--- Ceaser Cipher Tool ---"/n)
+print("Type [Encode] or [Decode] or [Bruteforce] to continue to the appropriate mode")
 user_in = input("Input: ").lower()
 
 # Encoding Tool
 if user_in == "encode":
     print()
-    print("--- Encoding Tool Selected ---")
-    print()
+    print("--- Encoding Tool Selected ---\n")
     key = int(input("Enter a encryption key between 1-26: "))
     plaintext = input("Enter your text that you wish encoded: ").lower()
     encode(key, plaintext)
@@ -34,12 +33,22 @@ if user_in == "encode":
 # Decoding Tool
 if user_in == "decode":
     print()
-    print("--- Decoding Tool Selected ---")
-    print()
+    print("--- Decoding Tool Selected ---\n")
     key = int(input("Enter a decryption key between 1-26: "))
     plaintext = input("Enter your text that you wish decoded: ").lower()
     key = 26-key
     decode(key, plaintext)
+    
+# Bruteforce Tool
+if user_in == "bruteforce":
+    print()
+    print("--- Bruteforcing Decoding Tool Selected ---\n")
+    plaintext = input("Enter your text that you wish brutefroce decoded: ").lower()
+    
+    # For loop to run though each possible key and print the output
+    for i in range(26):
+        key = i
+        decode(key, plaintext)
     
 else:
     exit
