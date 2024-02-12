@@ -18,7 +18,7 @@ def decode(keyIn, plaintextIn):
 
 # Progam open
 print()
-print("--- Ceaser Cipher Tool ---"/n)
+print("--- Ceaser Cipher Tool ---\n")
 print("Type [Encode] or [Decode] or [Bruteforce] to continue to the appropriate mode")
 user_in = input("Input: ").lower()
 
