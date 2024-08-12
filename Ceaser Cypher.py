@@ -4,21 +4,21 @@ alphabet = string.ascii_lowercase+string.ascii_uppercase
 
 # Encoding function
 def encode(keyIn, plaintextIn):
-    cipher = alphabet[keyIn:] + alphabet[:keyIn]
-    table = str.maketrans(alphabet, cipher)
+    cypher = alphabet[keyIn:] + alphabet[:keyIn]
+    table = str.maketrans(alphabet, cypher)
     encoded = plaintextIn.translate(table)
     print(encoded)
     
 # Decoding function
 def decode(keyIn, plaintextIn):
-    cipher = alphabet[keyIn:] + alphabet[:keyIn]
-    table = str.maketrans(alphabet, cipher)
+    cypher = alphabet[keyIn:] + alphabet[:keyIn]
+    table = str.maketrans(alphabet, cypher)
     decoded = plaintextIn.translate(table)
     print(decoded)
 
 # Progam open
 print()
-print("--- Ceaser Cipher Tool ---\n")
+print("--- Ceaser cypher Tool ---\n")
 print("Type [Encode] or [Decode] or [Bruteforce] to continue to the appropriate mode")
 user_in = input("Input: ").lower()
 
